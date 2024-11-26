@@ -1,101 +1,82 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/ui/mode-toggler";
+import { BellElectricIcon, Cpu, MessageSquare, Zap } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="min-h-screen w-full">
+      {/* Navigation Bar */}
+      <nav className="border-b fixed top-0 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex h-14 items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Cpu className="h-6 w-6" />
+            <span className="font-bold text-xl">CircuitSage</span>
+          </div>
+          <ModeToggle />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </nav>
+
+      {/* Main Content */}
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-8 md:pt-24">
+        {/* Hero Section */}
+        <section className="mx-auto flex max-w-[980px] flex-col items-center gap-4 py-6 md:py-10 lg:py-20">
+          <h1 className="text-center text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-6xl max-w-[800px]">
+            Your AI Assistant for Electronics Engineering
+          </h1>
+          <p className="max-w-[600px] text-center text-base sm:text-lg text-muted-foreground lg:text-xl">
+            Get instant help with circuit design, component recommendations, and real-time troubleshooting
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 mt-2">
+            <Button asChild size="lg" className="gap-2 w-full sm:w-auto min-w-[160px]">
+              <Link href="/chat">
+                <MessageSquare className="h-5 w-5" />
+                Start Chat
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="gap-2 w-full sm:w-auto min-w-[160px]">
+              <Link href="/components">
+                <Zap className="h-5 w-5" />
+                Browse Components
+              </Link>
+            </Button>
+          </div>
+        </section>
+
+        {/* Features Grid */}
+        <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 py-8 px-4 sm:px-0">
+          {features.map((feature, index) => (
+            <div 
+              key={index} 
+              className="group relative rounded-lg border p-6 hover:shadow-md transition-all bg-card"
+            >
+              <h3 className="font-semibold mb-2 flex items-center gap-2 text-lg">
+                {feature.icon}
+                {feature.title}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+            </div>
+          ))}
+        </section>
+      </div>
+    </main>
   );
 }
+
+const features = [
+  {
+    title: "Circuit Design Assistance",
+    description: "Get real-time suggestions and optimizations for your circuit designs with AI-powered analysis.",
+    icon: <BellElectricIcon className="h-5 w-5" />,
+  },
+  {
+    title: "Component Recommendations",
+    description: "Find the perfect components for your projects with intelligent recommendations based on your requirements.",
+    icon: <Cpu className="h-5 w-5" />,
+  },
+  {
+    title: "Smart Troubleshooting",
+    description: "Quickly identify and solve circuit issues with our advanced diagnostic capabilities.",
+    icon: <Zap className="h-5 w-5" />,
+  },
+];

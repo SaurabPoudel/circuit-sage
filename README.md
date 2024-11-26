@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Circuit Sage
+
+CircuitSage is an AI-powered smart assistant tailored for electronics engineers. It helps with circuit design, component recommendations, and real-time troubleshooting by integrating large language models and retrieval-augmented generation (RAG). Powered by Upstash's vector store and Redis, CircuitSage retrieves information from datasheets, guides, and component databases to provide fast, accurate responses, making it a valuable tool for electronics professionals and students alike. Built using Next.js 15, it offers seamless interaction and a personalized experience for users.
+
+## Features
+
+- **Circuit Design Assistance**: Get real-time suggestions and optimizations for your circuit designs with AI-powered analysis.
+- **Component Recommendations**: Find the perfect components for your projects with intelligent recommendations based on your requirements.
+- **Smart Troubleshooting**: Quickly identify and solve circuit issues with our advanced diagnostic capabilities.
+- **Integration with Upstash and Redis**: CircuitSage leverages Upstash's vector store and Redis for efficient data management and retrieval.
+- **Next.js 15**: CircuitSage is built using Next.js 15, providing a fast and responsive user experience.
+- **Tailwind CSS**: CircuitSage uses Tailwind CSS for styling, making it easy to customize and adapt to different themes and layouts.
+- **TypeScript**: CircuitSage is written in TypeScript, ensuring strong type checking and better code quality.
 
 ## Getting Started
 
-First, run the development server:
+Website is currently under development. After few days it will be live.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Contributing
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+We welcome contributions to CircuitSage! If you have any suggestions, bug reports, or feature requests, please feel free to open an issue or submit a pull request.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## License
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+CircuitSage is released under the [MIT License](https://opensource.org/licenses/MIT). You are free to use, modify, and distribute this software as per the terms of the license.    
